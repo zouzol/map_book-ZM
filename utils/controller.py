@@ -1,4 +1,3 @@
-
 def get_user_info(users_data:list)->None:
     for user in users_data:
         print(f'Twój znajomy {user["name"]} z miejscowości {user["location"]} opublikował {user["posts"]} postów.')
@@ -16,3 +15,12 @@ def remove_user(users_data: list) -> None:
         for user in users_data:
             if user['name'] == uzytkownik_do_usuniecia:
                 users_data.remove(user)
+
+def update_user(users_data: list)->None:
+
+    uzytkownik_do_edycji = input('Podaj uzytkownika do edycji: ')
+    for user in users_data:
+        if user['name'] == uzytkownik_do_edycji:
+            user['name']=input('Podaj nowe imie uzytkownika: ')
+            user['location']=input('Podaj nowa lokalizacje uzytkownika: ')
+            user['posts']=int(input('Podaj nowa liczbe postow: '))
